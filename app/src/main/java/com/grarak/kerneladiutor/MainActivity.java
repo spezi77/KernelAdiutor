@@ -257,8 +257,9 @@ public class MainActivity extends BaseActivity implements Constants {
             ITEMS.add(new DAdapter.Item(getString(R.string.thermal), new ThermalFragment()));
         if (GPU.hasGpuControl())
             ITEMS.add(new DAdapter.Item(getString(R.string.gpu), new GPUFragment()));
-        if (Screen.hasScreen())
-            ITEMS.add(new DAdapter.Item(getString(R.string.screen), new ScreenFragment()));
+        // Remove screen item (not required)
+        //if (Screen.hasScreen())
+        //    ITEMS.add(new DAdapter.Item(getString(R.string.screen), new ScreenFragment()));
         if (Wake.hasWake())
             ITEMS.add(new DAdapter.Item(getString(R.string.wake_controls), new WakeFragment()));
         if (Sound.hasSound())
