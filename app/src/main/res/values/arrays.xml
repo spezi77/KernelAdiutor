@@ -47,18 +47,6 @@
         <item>@string/very_aggressive</item>
     </string-array>
 
-    <!-- Backup -->
-    <string-array name="backup_menu">
-        <item>@string/restore</item>
-        <item>@string/delete</item>
-    </string-array>
-
-    <!-- Build prop -->
-    <string-array name="build_prop_menu">
-        <item>@string/edit</item>
-        <item>@string/delete</item>
-    </string-array>
-
     <!-- Profile -->
     <string-array name="profile_menu">
         <item>@string/apply</item>
@@ -72,20 +60,6 @@
         <item>@string/userspace</item>
         <item>@string/lcd_panel</item>
         <item>@string/hybrid</item>
-    </string-array>
-
-    <!-- Recovery -->
-    <string-array name="recovery_variants">
-        <item>@string/cwm_recovery</item>
-        <item>@string/twrp</item>
-    </string-array>
-
-    <!-- Initd -->
-    <string-array name="initd_menu">
-        <item>@string/information</item>
-        <item>@string/execute</item>
-        <item>@string/edit</item>
-        <item>@string/delete</item>
     </string-array>
 
 </resources>

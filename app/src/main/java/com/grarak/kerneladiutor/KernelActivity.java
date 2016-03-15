@@ -24,8 +24,6 @@ import android.text.Html;
 import android.view.View;
 import android.widget.ImageView;
 
-import com.grarak.kerneladiutor.fragments.tools.download.ParentFragment;
-import com.grarak.kerneladiutor.utils.json.Downloads;
 import com.grarak.kerneladiutor.utils.Utils;
 import com.nineoldandroids.view.ViewHelper;
 
@@ -43,21 +41,14 @@ public class KernelActivity extends BaseActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        Downloads.KernelContent kernelContent =
-                new Downloads.KernelContent(getIntent().getExtras().getString(KERNEL_JSON_ARG));
+
 
         ActionBar actionBar;
         String name;
-        if ((name = kernelContent.getName()) != null && (actionBar = getSupportActionBar()) != null)
-            actionBar.setTitle(Html.fromHtml(name).toString());
 
         logoContainer = findViewById(R.id.logo_container);
         ImageView logoView = (ImageView) findViewById(R.id.logo);
         ViewCompat.setTransitionName(logoView, LOGO_ARG);
-        Utils.loadImagefromUrl(kernelContent.getLogo(), logoView);
-
-        getSupportFragmentManager().beginTransaction().replace(R.id.content_frame,
-                ParentFragment.newInstance(kernelContent)).commitAllowingStateLoss();
     }
 
     @Override
