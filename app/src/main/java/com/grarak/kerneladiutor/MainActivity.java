@@ -68,17 +68,11 @@ import com.grarak.kerneladiutor.fragments.kernel.WakeFragment;
 import com.grarak.kerneladiutor.fragments.other.AboutusFragment;
 import com.grarak.kerneladiutor.fragments.other.FAQFragment;
 import com.grarak.kerneladiutor.fragments.other.SettingsFragment;
-import com.grarak.kerneladiutor.fragments.tools.BackupFragment;
-import com.grarak.kerneladiutor.fragments.tools.BuildpropFragment;
-import com.grarak.kerneladiutor.fragments.tools.InitdFragment;
 import com.grarak.kerneladiutor.fragments.tools.ProfileFragment;
-import com.grarak.kerneladiutor.fragments.tools.RecoveryFragment;
-import com.grarak.kerneladiutor.fragments.tools.download.DownloadsFragment;
 import com.grarak.kerneladiutor.services.ProfileTileReceiver;
 import com.grarak.kerneladiutor.utils.Constants;
 import com.grarak.kerneladiutor.utils.Utils;
 import com.grarak.kerneladiutor.utils.database.ProfileDB;
-import com.grarak.kerneladiutor.utils.json.Downloads;
 import com.grarak.kerneladiutor.utils.kernel.CPUHotplug;
 import com.grarak.kerneladiutor.utils.kernel.CPUVoltage;
 import com.grarak.kerneladiutor.utils.kernel.Entropy;
@@ -89,8 +83,6 @@ import com.grarak.kerneladiutor.utils.kernel.Screen;
 import com.grarak.kerneladiutor.utils.kernel.Sound;
 import com.grarak.kerneladiutor.utils.kernel.Thermal;
 import com.grarak.kerneladiutor.utils.kernel.Wake;
-import com.grarak.kerneladiutor.utils.tools.Backup;
-import com.grarak.kerneladiutor.utils.tools.Buildprop;
 import com.kerneladiutor.library.root.RootUtils;
 
 import java.util.ArrayList;
@@ -277,17 +269,7 @@ public class MainActivity extends BaseActivity implements Constants {
         ITEMS.add(new DAdapter.Item(getString(R.string.misc_controls), new MiscFragment()));
         ITEMS.add(new DAdapter.Item(getString(R.string.plugins), new PluginsFragment()));
         ITEMS.add(new DAdapter.Header(getString(R.string.tools)));
-        Downloads downloads;
-        if ((downloads = new Downloads(this)).isSupported())
-            ITEMS.add(new DAdapter.Item(getString(R.string.downloads),
-                    DownloadsFragment.newInstance(downloads.getLink())));
-        if (Backup.hasBackup())
-            ITEMS.add(new DAdapter.Item(getString(R.string.backup), new BackupFragment()));
-        if (Buildprop.hasBuildprop())
-            ITEMS.add(new DAdapter.Item(getString(R.string.build_prop_editor), new BuildpropFragment()));
         ITEMS.add(new DAdapter.Item(getString(R.string.profile), new ProfileFragment()));
-        ITEMS.add(new DAdapter.Item(getString(R.string.recovery), new RecoveryFragment()));
-        ITEMS.add(new DAdapter.Item(getString(R.string.initd), new InitdFragment()));
         ITEMS.add(new DAdapter.Header(getString(R.string.other)));
         ITEMS.add(new DAdapter.Item(getString(R.string.settings), new SettingsFragment()));
         ITEMS.add(new DAdapter.Item(getString(R.string.faq), new FAQFragment()));

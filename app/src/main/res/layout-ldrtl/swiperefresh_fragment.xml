@@ -65,8 +65,7 @@
             fab:fab_colorNormal="@color/fab_normal_menu"
             fab:fab_colorPressed="@color/fab_pressed_menu"
             fab:fab_icon="@drawable/ic_backup"
-            fab:fab_size="mini"
-            fab:fab_title="@string/backup" />
+            fab:fab_size="mini"/>
 
         <net.i2p.android.ext.floatingactionbutton.FloatingActionButton
             android:id="@+id/add_button"
@@ -75,8 +74,7 @@
             fab:fab_colorNormal="@color/fab_normal_menu"
             fab:fab_colorPressed="@color/fab_pressed_menu"
             fab:fab_icon="@drawable/ic_pen"
-            fab:fab_size="mini"
-            fab:fab_title="@string/add" />
+            fab:fab_size="mini"/>
 
     </net.i2p.android.ext.floatingactionbutton.FloatingActionsMenu>
 
